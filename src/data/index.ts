@@ -8,10 +8,12 @@ export default async function loadStructuredData() {
   const hscFuture = loadYamlTree(path.join(__dirname, "hsc"));
   const workflowsFuture = loadWorkflows();
   const tagsFuture = loadTags(await structsFuture);
+  const megaloFuture = loadYamlTree(path.join(__dirname, "megalo"));
   return {
     tags: await tagsFuture,
     hsc: await hscFuture,
     structs: await structsFuture,
     workflows: await workflowsFuture,
+    megalo: await megaloFuture,
   };
 };

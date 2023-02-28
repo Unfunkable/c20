@@ -11,6 +11,7 @@ const clikeLang = require("highlight.js/lib/languages/c-like");
 const yamlLang = require("highlight.js/lib/languages/yaml");
 const {consoleLang, hscLang} = require("./hsc");
 const vrmlLang = require("./vrml");
+//const megaloLang = require("./megalo")
 import markdoc from "./markdoc";
 
 //these language names should have no punctuation or dashes or it breaks markdown highlighting
@@ -22,6 +23,7 @@ hljs.registerLanguage("consoleh2a", consoleLang);
 hljs.registerLanguage("consoleh3", consoleLang);
 hljs.registerLanguage("inittxt", consoleLang);
 hljs.registerLanguage("md", markdoc);
+//hljs.registerLanguage("megalo", megaloLang)
 
 hljs.registerLanguage("yml", yamlLang);
 hljs.registerLanguage("hlsl", clikeLang);

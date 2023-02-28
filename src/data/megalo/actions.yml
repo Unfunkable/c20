@@ -1,0 +1,148 @@
+﻿actions:
+  - slug: adjust_grenades
+    info:
+      en: |-
+        ```megalo
+        adjust_grenades <player> {frag|plasma} <operator> <number>
+        ```
+        Adjusts the player's current grenade count. The count is capped at 4 each; attempting to increase it past this number will set it to 4 instead.
+  - slug: apply_player_traits
+    info:
+      en: |-
+        ```megalo
+        apply_player_traits <player> <player_traits_name>
+        ```
+        Applies a set of player traits during the current tick. The traits are applied for as long as the action is running; to remove the traits, stop calling the action.
+  - slug: AwardMedal
+    info:
+      en: |-
+        ```megalo
+        AwardMedal <team_or_player_target> <medal_name> [points <point_value_override>]
+        ```
+        *Halo 4/Halo 2: Anniversary*: Awards a medal to a specific team or player. The amount of points given by the medal can be overridden.
+  - slug: biped_drop_weapon 
+    info:
+      en: |-
+        ```megalo
+        biped_drop_weapon <biped> {primary|secondary|special} [delete_on_drop]
+        ```
+        Remove a weapon from a biped.
+  - slug: biped_give_weapon
+    info:
+      en: |-
+        ```megalo
+        biped_give_weapon <biped> <weapon> {primary|secondary|force}
+        ```
+        Creates a new weapon and gives it to a biped. If the biped is already carrying two weapons, the action will have no effect. "primary" will holster the current biped's weapon and switches them to the new weapon. "force" will add the weapon to the biped, and make them switch to it, even if they player has the "Weapon Pickup" trait set to "Disabled."
+  - slug: BlinkNavpoint
+    info:
+      en: |-
+        ```megalo
+        BlinkNavpoint <object> {true|false}
+        ```
+        *Halo 4/Halo 2: Anniversary*: Controls if the object has a blinking navpoint.
+  - slug: boundary_set_player_color
+    info:
+      en: |-
+        ```megalo
+        boundary_set_player_color <object> <player>
+        ```
+        Recolors an object's shape boundary based on the player's armor color. The player variable must be a nested member of the object.
+  - slug: boundary_set_visible
+    info:
+      en: |-
+        ```megalo
+        boundary_set_visible <object> {true|false}
+        ```
+        Controls if the object has a visible shape boundary. Spherical boundaries will not be visible regardless of this setting. 
+  - slug: break_into_debugger
+    info:
+      en: |-
+        ```megalo
+        break_into_debugger
+        ```
+        Not functional in the release version.
+  - slug: ClearMedalOverride
+    info:
+      en: |-
+        ```megalo
+        ClearMedalOverride <medal>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: create_object
+    info:
+      en: |-
+        ```megalo
+        create_object <object_type> at <place_at_object> [set <object_reference_out>] [label <filter name>] [never_garbage] [suppress effect] [absolute_orientation] [offset <x> <y> <z>] [variant <name>]
+        ```
+        Creates a new object as close to the specified object as possible. A reference to the created object can optionally be stored in an object variable, and a forge label can also be supplied. An offset relative to the placed-at object can be given, alongside a variant name if the object type supports it, like the Warthog and its variations. Community research indicates the `never_garbage` flag does not function.
+  - slug: create_tunnel
+    info:
+      en: |-
+        ```megalo
+        create_tunnel <object_a> <object_b> <object_type> <radius> <object_reference_out>
+        ```
+        Creates a new object between two specified objects, and outputs a reference to the new object into a variable. Unlike `create_object`, this action will create objects exactly where they're supposed to be. By supplying the same object for `object_a` and `object_b`, this can be used to create objects at the exact origin.
+  - slug: DataMineAddCategory
+    info:
+      en: |-
+        ```megalo
+        DataMineAddCategory <category_name_string>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineAddInt
+    info:
+      en: |-
+        ```megalo
+        DataMineAddInt <key> <int>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineAddObjectPosition
+    info:
+      en: |-
+        ```megalo
+        DataMineAddObjectPosition <key> <object>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineAddPlayer
+    info:
+      en: |-
+        ```megalo
+        DataMineAddPlayer <key> <player>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineAddPlayerPosition
+    info:
+      en: |-
+        ```megalo
+        DataMineAddPlayerPosition <key> <player>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineAddReal
+    info:
+      en: |-
+        ```megalo
+        DataMineAddReal <key> <number>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineAddString
+    info:
+      en: |-
+        ```megalo
+        DataMineAddString <key> <dynamic_string>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineAddTeam
+    info:
+      en: |-
+        ```megalo
+        DataMineAddTeam <key> <team>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineAddTimerTicksRemaining
+    info:
+      en: |-
+        ```megalo
+        DataMineAddTimerTicksRemaining <key> <time>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
