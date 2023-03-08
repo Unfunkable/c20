@@ -33,14 +33,14 @@
         ```megalo
         biped_give_weapon <biped> <weapon> {primary|secondary|force}
         ```
-        Creates a new weapon and gives it to a biped. If the biped is already carrying two weapons, the action will have no effect. "primary" will holster the current biped's weapon and switches them to the new weapon. "force" will add the weapon to the biped, and make them switch to it, even if they player has the "Weapon Pickup" trait set to "Disabled."
+        Creates a new weapon and gives it to a biped. If the biped is already carrying two weapons, the action will have no effect. `primary` will holster the current biped's weapon and switches them to the new weapon. `force` will add the weapon to the biped, and make them switch to it, even if they player has the "Weapon Pickup" trait set to "Disabled."
   - slug: BlinkNavpoint
     info:
       en: |-
         ```megalo
         BlinkNavpoint <object> {true|false}
         ```
-        *Halo 4/Halo 2: Anniversary*: Controls if the object has a blinking navpoint.
+        *Halo 4/Halo 2: Anniversary*: Controls if the specified object has a blinking navpoint.
   - slug: boundary_set_player_color
     info:
       en: |-
@@ -146,3 +146,1331 @@
         DataMineAddTimerTicksRemaining <key> <time>
         ```
         *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineBegin
+    info:
+      en: |-
+        ```megalo
+        DataMineBegin <event_nane_string>
+        ```
+        *Halo4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineClear
+    info:
+      en: |-
+        ```megalo
+        DataMineClear
+        ```
+        *Halo4/Halo 2: Anniversary:* Unknown.
+  - slug: DataMineCommit
+    info:
+      en: |-
+        ```megalo
+        DataMineCommit
+        ```
+        *Halo4/Halo 2: Anniversary:* Unknown.
+  - slug: debug_force_player_view_count
+    info:
+      en: |-
+        ```megalo
+        debug_force_player_view_count <splitscreen_count>
+        ```
+        Unknown.
+  - slug: debugging_enable_tracing
+    info:
+      en: |-
+        ```megalo
+        debugging_enable_tracing <boolean>
+        ```
+        Unknown.
+  - slug: delete_object
+    info:
+      en: |-
+        ```megalo
+        delete_object <object>
+        ```
+        Deletes an object from the game world.
+  - slug: device_animate_position
+    info:
+      en: |-
+        ```megalo
+        device_animate_position <object> <animation_target_fraction> <animation_duration_seconds> <acceleration_seconds> <deceleration_seconds>
+        ```
+        Animates the position of a device machine.
+  - slug: device_get_position
+    info:
+      en: |-
+        ```megalo
+        device_get_position <object> <number_out>
+        ```
+        Gets the position of a device machine, and outputs it to a numeric variable as a percentage.
+  - slug: device_set_position
+    info:
+      en: |-
+        ```megalo
+        device_set_position <object> <number>
+        ```
+        Sets the position of a device machine, taking a percentage as an input number.
+  - slug: device_set_position_immediate
+    info:
+      en: |-
+        ```megalo
+        device_set_position_immediate <object> <number>
+        ```
+        Sets the position of a device machine, taking a percentage as an input number. The difference between this and `device_set_position` is unknown.
+  - slug: device_set_position_track
+    info:
+      en: |-
+        ```megalo
+        device_set_position_track <object> <animation_name> <interpolation_time>
+        ```
+        Unknown.
+  - slug: device_set_power
+    info:
+      en: |-
+        ```megalo
+        device_set_power <object> <number>
+        ```
+        Sets the power of a device machine, taking a percentage as an input number. This can be used to control things like the doors on Boneyard and Sword Base.
+  - slug: DeviceControlSetActionMode
+    info:
+      en: |-
+        ```megalo
+        DeviceControlSetActionMode <device_control> {primary|secondary}
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DeviceControlSetExclusiveUser
+    info:
+      en: |-
+        ```megalo
+        DeviceControlSetExclusiveUser <device_control> <player>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DeviceDispenserSetEnabled
+    info:
+      en: |-
+        ```megalo
+        DeviceDispenserSetEnabled <device_dispenser> {boolean}
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DeviceGetHoldTime
+    info:
+      en: |-
+        ```megalo
+        DeviceGetHoldTime <device> <hold_time_out>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown. Outputs the hold time in milliseconds into a numeric variable.
+  - slug: DeviceGetInteractingPlayerUser
+    info:
+      en: |-
+        ```megalo
+        DeviceGetInteractingPlayerUser <device> <player_out>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown. Outputs into a player variable.
+  - slug: DeviceGetPlayerUser
+    info:
+      en: |-
+        ```megalo
+        DeviceGetPlayerUser <device> <player_out>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown. Outputs into a player variable.
+  - slug: DeviceSetHoldTime
+    info:
+      en: |-
+        ```megalo
+        DeviceSetHoldTime <device> <hold_time>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown. Hold time is in milliseconds.
+  - slug: DeviceSetRequireLineOfSight
+    info:
+      en: |-
+        ```megalo
+        DeviceSetRequireLineOfSight <device> <boolean>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DeviceTouch
+    info:
+      en: |-
+        ```megalo
+        DeviceTouch <device> <player_or_none>
+        ```
+        *Halo 4/Halo 2: Anniversary:* Unknown.
+  - slug: DisallowMatchJoinInProgress
+    info:
+      en: |-
+        ```megalo
+        DisallowMatchJoinInProgress <boolean>
+        ```
+        *Halo 4*: This determines if players are able to join-in-progress via matchmaking in the Xbox 360 release. In MCC, this is not functional as there is no join-in-progress for matchmaking.
+
+        *Halo 2: Anniversary*: Not functional.
+  - slug: EnableTerritorySpawning
+    info:
+      en: |-
+        ```megalo
+        EnableTerritorySpawning <player> <boolean>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Determines if a player is able to spawn on a territory. Used in Dominion.
+  - slug: EnableTerritorySpawnSelection
+    info:
+      en: |-
+        ```megalo
+        EnableTerritorySpawnSelection <player> <boolean>
+        ```
+        *Halo 4/Halo 2: Anniversary*: If coop spawning is enabled, this would determine if a player is able to select the territory they spawn at out of any friendly territories. However, coop spawning does not function in these titles.
+  - slug: end_game
+    info:
+      en: |-
+        ```megalo
+        end_game
+        ```
+        Ends the game.
+  - slug: end_round
+    info:
+      en: |-
+        ```megalo
+        end_round
+        ```
+        Ends the current round.
+  - slug: FindDropPosition
+    info:
+      en: |-
+        ```megalo
+        FindDropPosition <object> <drop_source> <drop_range> <drop_height_delta> <drop_arc_angle> <drop_clear_range> <drop_boundary_object>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Unknown.
+  - slug: for_each
+    info:
+      en: |-
+        ```megalo
+        for_each <trigger_type>
+        ```
+        Runs a trigger nested inside the parent trigger.
+  - slug: game_grief_record_custom_penalty
+    info:
+      en: |-
+        ```megalo
+        game_grief_record_custom_penalty <player> <penalty_amount>
+        ```
+        Unknown.
+  - slug: get_button_time
+    info:
+      en: |-
+        ```megalo
+        get_button_time <player> <button> <milliseconds_out>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Tests player inputs and outputs the time held in milliseconds to a numeric variable. This action appears to only work for the host player, or the local player if ran in a local trigger. It also will not detect keyboard and mouse input.
+  - slug: get_player_holding_object
+    info:
+      en: |-
+        ```megalo
+        get_player_holding_object <object> <player_out>
+        ```
+        Gets the player holding a specific object and outputs them into a player variable.
+  - slug: get_random_object
+    info:
+      en: |-
+        ```megalo
+        get_random_object <filter_name> <ignore_object> <object_out> 
+        ```
+        Gets a random object with a specified forge label and outputs it into an object variable. An object can be ignored from being picked, or `none` can be written in its place.
+  - slug: get_vehicle_entering_player
+    info:
+      en: |-
+        ```megalo
+        get_vehicle_entering_player <vehicle> <entering_player>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Gets a player entering a specific vehicle and outputs them into a player variable.
+  - slug: GetDigit
+    info:
+      en: |-
+        ```megalo
+        GetDigit <value> <place> <result_out>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Gets the digit of a number.
+  - slug: GetTeleporterChannel
+    info:
+      en: |-
+        ```megalo
+        GetTeleporterChannel <teleporter> <channel_out> [object_type]
+        ```
+        *Halo 4/Halo 2: Anniversary*: Gets the channel of a specified teleporter and outputs it into a numeric variable.
+  - slug: GetTotalSpawnTime
+    info:
+      en: |-
+        ```megalo
+        GetTotalSpawnTime <candy_spawner> <spawn_time_out>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Unknown.
+  - slug: GiveOrdnancePoints
+    info:
+      en: |-
+        ```megalo
+        GiveOrdnancePoints <player> <points>
+        ```
+        *Halo 4*: Award a player with Ordnance points.
+
+        *Halo 2: Anniversary*: Award a player with Ordnance points. Ordnance does not make an appearance in this title.
+  - slug: GivePowerup
+    info:
+      en: |-
+        ```megalo
+        GivePowerup <player> <powerup>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Gives a powerup to the specified player.
+  - slug: HaveLineOfSight
+    info:
+      en: |-
+        ```megalo
+        HaveLineOfSight <object> <object> <number_out>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Determines if an object has line of sight to another, and outputs either 0 or 1 into a numeric variable.
+  - slug: hide_object
+    info:
+      en: |-
+        ```megalo
+        hide_object <object> <boolean>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Determines if an object should be hidden.
+  - slug: hs_function_call
+    info:
+      en: |-
+        ```megalo
+        hs_function_call <function_name>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Unknown. Appears to potentially allow the ability to call HaloScript functions.
+  - slug: hud_post_message
+    info:
+      en: |-
+        ```megalo
+        hud_post_message <team_or_player> <sound> <dynamic_string>
+        ```
+        Prints a message to the killfeed.
+  - slug: hud_widget_set_icon
+    info:
+      en: |-
+        ```megalo
+        hud_widget_set_icon <hud_widget_name> <icon>
+        ```
+        Sets the icon that displays with a HUD widget. Only appears if the widget's location is set to `low_center`.
+  - slug: name
+    info:
+      en: |-
+        ```megalo
+        code
+        ```
+        comment
+  - slug: hud_widget_set_meter
+    info:
+      en: |-
+        ```megalo
+        hud_widget_set_meter <hud_widget_name> {off|<current_value_number> <max_value_number>|<timer>}
+        ```
+        Determines if a HUD widget displays a meter, either by specifying a timer, or two numbers, where the first number will be the meter's current value, and the second number is the maximum value.
+  - slug: hud_widget_set_text
+    info:
+      en: |-
+        ```megalo
+        hud_widget_set_text <hud_widget_name> <dynamic_string>
+        ```
+        Set the text of a HUD widget.
+  - slug: hud_widget_set_value
+    info:
+      en: |-
+        ```megalo
+        hud_widget_set_value <huds_widget_name> <dynamic_string>
+        ```
+        Sets the value text of a HUD widget.
+  - slug: hud_widget_set_visibility
+    info:
+      en: |-
+        ```megalo
+        hud_widget_set_visibility <hud_widget_name> <player> <boolean>
+        ```
+        Determines who can see the specified HUD widget.
+  - slug: IncidentGetCauseObject
+    info:
+      en: |-
+        ```megalo
+        IncidentGetCauseObject <object>
+        ```
+        *Halo 4/Halo 2: Anniversary*: In an incident trigger, gets the object that caused the incident and outputs it to an object variable.
+  - slug: IncidentGetCausePlayer
+    info:
+      en: |-
+        ```megalo
+        IncidentGetCausePlayer <player>
+        ```
+        *Halo 4/Halo 2: Anniversary*: In an incident trigger, gets the player that caused the incident and outputs it to a player variable.
+  - slug: IncidentGetCauseTeam
+    info:
+      en: |-
+        ```megalo
+        IncidentGetCauseTeam <team>
+        ```
+        *Halo 4/Halo 2: Anniversary*: In an incident trigger, gets the team that caused the incident and outputs it to a team variable.
+  - slug: IncidentGetCustomData
+    info:
+      en: |-
+        ```megalo
+        IncidentGetCustomData <variable>
+        ```
+        *Halo 4/Halo 2: Anniversary*: In an incident trigger, gets custom data sent by the incident and outputs it to a variable.
+  - slug: IncidentGetEffectObject
+    info:
+      en: |-
+        ```megalo
+        IncidentGetEffectObject <object>
+        ```
+        *Halo 4/Halo 2: Anniversary*: In an incident trigger, gets the effect object of the incident and outputs it into an object variable.
+  - slug: IncidentGetEffectPlayer
+    info:
+      en: |-
+        ```megalo
+        IncidentGetEffectPlayer <player>
+        ```
+        *Halo 4/Halo 2: Anniversary*: In an incident trigger, gets the effect player of the incident and outputs it into a player variable
+  - slug: IncidentGetEffectTeam
+    info:
+      en: |-
+        ```megalo
+        IncidentGetEffectTeam <team>
+        ```
+        *Halo 4/Halo 2: Anniversary*: In an incident trigger, gets the effect team of the incident and outputs it into a team variable
+  - slug: IncidentGetSpecialDeathType
+    info:
+      en: |-
+        ```megalo
+        IncidentGetSpecialDeathType
+        ```
+        *Halo 4/Halo 2: Anniversary*:
+  - slug: IsPlayerBeingFancyAssassinated
+    info:
+      en: |-
+        ```megalo
+        IsPlayerBeingFancyAssassinated <player> <number_out>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Unknown. 
+  - slug: IsSpawnerBlocked
+    info:
+      en: |-
+        ```megalo
+        IsSpawnerBlocked <object> <booleanOut>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Unknown.
+  - slug: IsSpawnerReady
+    info:
+      en: |-
+        ```megalo
+        IsSpawnerReady <object> <booleanOut>
+        ```
+        *Halo 4/Halo 2: Anniversary*:
+  - slug: LoadGameHud
+    info:
+      en: |-
+        ```megalo
+        LoadGameHud <name>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Displays the specified HUD element, like a banner.
+  - slug: multiplePlayersTiedForFirst
+    info:
+      en: |-
+        ```megalo
+        multiplePlayersTiedForFirst <number_out>
+        ```
+        *Halo 4/Halo 2: Anniversary*: Gets the number of players tied for first place, and outputs it into a numeric variable.
+  - slug: multipleTeamsTiedForFirst
+    info:
+      en: |-
+        ```megalo
+        multipleTeamsTiedForFirst
+        ```
+        *Halo 4/Halo 2: Anniversary*: Gets the number of teams tied for first place, and outputs it into a numeric variable.
+  - slug: navpoint_set_icon
+    info:
+      en: |-
+        ```megalo
+        navpoint_set_icon <object> <icon> <number (only if icon==num)>
+        ```
+        *Halo: Reach*: Sets the icon of an object's navpoint. If the icon is set to `num`, then a number must be provided. The highest number displayed is "9".
+
+        *Halo 4/Halo 2: Anniversary*: Sets the icon of an object's navpoint. If the icon is set to `num`, then a number must be provided. The numbers will each display as a letter in-game, starting with `1` being displayed as `A`. The maximum number is `9`, which will display as `I`. Higher numbers will all display in-game as `I`.
+  - slug: navpoint_set_priority
+    info:
+      en: |-
+        ```megalo
+        navpoint_set_priority <object> {low|normal|high|blink}
+        ```
+        *Halo: Reach*: Sets the priority of an object's navpoint. `low` will have the navpoint appear mostly translucent. `normal` has it appear as standard. `high` has it appear even when off-screen. `blink` has it rapidly blinking.
+
+        *Halo 4/Halo 2: Anniversary*: Not functional and replaced by `BlinkNavpoint` and `PulseNavpoint`.
+  - slug: navpoint_set_secondary_text
+    info:
+      en: |-
+        ```megalo
+        navpoint_set_secondary_text <object> <dynamic_string>
+        ```
+        Sets the secondary text of an object's navpoint.
+  - slug: navpoint_set_text
+    info:
+      en: |-
+        ```megalo
+        navpoint_set_text <object> <dynamic_string>
+        ```
+        *Halo: Reach*: Sets the text of an object's navpoint.
+
+        *Halo 4/Halo 2: Anniversary*: Sets the text of an object's navpoint, but most navpoint templates do not support displaying custom text.
+  - slug: navpoint_set_timer
+    info:
+      en: |-
+        ```megalo
+        navpoint_set_timer <object> <timer_name>
+        ```
+        *Halo: Reach*: Sets a timer to display on an object's navpoint
+
+        *Halo 4/Halo 2: Anniversary*: Sets a timer to display on an object's navpoint, if supported by the navpoint template.
+  - slug: navpoint_set_visible
+    info:
+      en: |-
+        ```megalo
+        navpoint_set_visible <object> {no_one|everyone|allies|enemies|player <player> <boolean>}
+        ```
+        Controls who can see an object's navpoint.
+  - slug: navpoint_set_visible_range
+    info:
+      en: |-
+        ```megalo
+        navpoint_set_visible_range <object> <min (feet)> <max (feet)>
+        ```
+        Controls the distance at which an object's navpoint is visible, in feet.
+  - slug: NavPointSetActionTeam
+    info:
+      en: |-
+        ```megalo
+        NavPointSetActionTeam
+        ```
+        comment
+  - slug: NavPointSetIgnoreLineOfSight
+    info:
+      en: |-
+        ```megalo
+        NavPointSetIgnoreLineOfSight
+        ```
+        comment
+  - slug: NavPointSetIsSpawningTerritory
+    info:
+      en: |-
+        ```megalo
+        NavPointSetIsSpawningTerritory
+        ```
+        comment
+  - slug: NavPointSetIsTerritory
+    info:
+      en: |-
+        ```megalo
+        NavPointSetIsTerritory
+        ```
+        comment
+  - slug: NavPointSetMaxTerritoryLevel
+    info:
+      en: |-
+        ```megalo
+        NavPointSetMaxTerritoryLevel
+        ```
+        comment
+  - slug: NavPointSetSecondaryIcon
+    info:
+      en: |-
+        ```megalo
+        NavPointSetSecondaryIcon
+        ```
+        comment
+  - slug: NavPointSetTerritoryLevel
+    info:
+      en: |-
+        ```megalo
+        NavPointSetTerritoryLevel
+        ```
+        comment
+  - slug: NavPointSetTerritorySortOrder
+    info:
+      en: |-
+        ```megalo
+        NavPointSetTerritorySortOrder
+        ```
+        comment
+  - slug: NavPointSetTerritoryTimer
+    info:
+      en: |-
+        ```megalo
+        NavPointSetTerritoryTimer
+        ```
+        comment
+  - slug: NavPointSetType
+    info:
+      en: |-
+        ```megalo
+        NavPointSetType
+        ```
+        comment
+  - slug: object_adjust_health
+    info:
+      en: |-
+        ```megalo
+        object_adjust_health
+        ```
+        comment
+  - slug: object_adjust_maximum_health
+    info:
+      en: |-
+        ```megalo
+        object_adjust_maximum_health
+        ```
+        comment
+  - slug: object_adjust_maximum_shield
+    info:
+      en: |-
+        ```megalo
+        object_adjust_maximum_shield
+        ```
+        comment
+  - slug: object_adjust_shield
+    info:
+      en: |-
+        ```megalo
+        object_adjust_shield
+        ```
+        comment
+  - slug: object_attach
+    info:
+      en: |-
+        ```megalo
+        object_attach
+        ```
+        comment
+  - slug: object_bounce
+    info:
+      en: |-
+        ```megalo
+        object_bounce
+        ```
+        comment
+  - slug: object_destroy
+    info:
+      en: |-
+        ```megalo
+        object_destroy
+        ```
+        comment
+  - slug: object_detach
+    info:
+      en: |-
+        ```megalo
+        object_detach
+        ```
+        comment
+  - slug: object_face_object
+    info:
+      en: |-
+        ```megalo
+        object_face_object
+        ```
+        comment
+  - slug: object_get_distance
+    info:
+      en: |-
+        ```megalo
+        object_get_distance
+        ```
+        comment
+  - slug: object_get_health
+    info:
+      en: |-
+        ```megalo
+        object_get_health
+        ```
+        comment
+  - slug: object_get_orientation
+    info:
+      en: |-
+        ```megalo
+        object_get_orientation
+        ```
+        comment
+  - slug: object_get_shield
+    info:
+      en: |-
+        ```megalo
+        object_get_shield
+        ```
+        comment
+  - slug: object_get_velocity
+    info:
+      en: |-
+        ```megalo
+        object_get_velocity
+        ```
+        comment
+  - slug: object_set_invincibility
+    info:
+      en: |-
+        ```megalo
+        object_set_invincibility
+        ```
+        comment
+  - slug: object_set_never_garbage
+    info:
+      en: |-
+        ```megalo
+        object_set_never_garbage
+        ```
+        comment
+  - slug: object_set_orientation
+    info:
+      en: |-
+        ```megalo
+        object_set_orientation
+        ```
+        comment
+  - slug: object_set_scale
+    info:
+      en: |-
+        ```megalo
+        object_set_scale
+        ```
+        comment
+  - slug: ObjectAttachToMarker
+    info:
+      en: |-
+        ```megalo
+        ObjectAttachToMarker
+        ```
+        comment
+  - slug: ObjectCopyBoundary
+    info:
+      en: |-
+        ```megalo
+        ObjectCopyBoundary
+        ```
+        comment
+  - slug: ObjectGetHealthAbsolute
+    info:
+      en: |-
+        ```megalo
+        ObjectGetHealthAbsolute
+        ```
+        comment
+  - slug: objectGetImmediateParentPlayer
+    info:
+      en: |-
+        ```megalo
+        objectGetImmediateParentPlayer
+        ```
+        comment
+  - slug: ObjectQueryKillBoundaries
+    info:
+      en: |-
+        ```megalo
+        ObjectQueryKillBoundaries
+        ```
+        comment
+  - slug: ObjectSetPosition
+    info:
+      en: |-
+        ```megalo
+        ObjectSetPosition
+        ```
+        comment
+  - slug: OrdnanceSetClear
+    info:
+      en: |-
+        ```megalo
+        OrdnanceSetClear
+        ```
+        comment
+  - slug: play_sound
+    info:
+      en: |-
+        ```megalo
+        play_sound
+        ```
+        comment
+  - slug: player_adjust_money
+    info:
+      en: |-
+        ```megalo
+        player_adjust_money
+        ```
+        comment
+  - slug: player_death_get_damage_type
+    info:
+      en: |-
+        ```megalo
+        player_death_get_damage_type
+        ```
+        comment
+  - slug: player_death_get_killing_player
+    info:
+      en: |-
+        ```megalo
+        player_death_get_killing_player
+        ```
+        comment
+  - slug: player_death_get_special_type
+    info:
+      en: |-
+        ```megalo
+        player_death_get_special_type
+        ```
+        comment
+  - slug: player_enable_purchases
+    info:
+      en: |-
+        ```megalo
+        player_enable_purchases
+        ```
+        comment
+  - slug: player_get_equipment
+    info:
+      en: |-
+        ```megalo
+        player_get_equipment
+        ```
+        comment
+  - slug: player_get_fireteam_index
+    info:
+      en: |-
+        ```megalo
+        player_get_fireteam_index
+        ```
+        comment
+  - slug: player_get_killing_spree_count
+    info:
+      en: |-
+        ```megalo
+        player_get_killing_spree_count
+        ```
+        comment
+  - slug: player_get_place
+    info:
+      en: |-
+        ```megalo
+        player_get_place
+        ```
+        comment
+  - slug: player_get_target_object
+    info:
+      en: |-
+        ```megalo
+        player_get_target_object
+        ```
+        comment
+  - slug: player_get_team_place
+    info:
+      en: |-
+        ```megalo
+        player_get_team_place
+        ```
+        comment
+  - slug: player_get_vehicle
+    info:
+      en: |-
+        ```megalo
+        player_get_vehicle
+        ```
+        comment
+  - slug: player_get_weapon
+    info:
+      en: |-
+        ```megalo
+        player_get_weapon
+        ```
+        comment
+  - slug: player_pick_up_weapon
+    info:
+      en: |-
+        ```megalo
+        player_pick_up_weapon
+        ```
+        comment
+  - slug: player_set_coop_spawning
+    info:
+      en: |-
+        ```megalo
+        player_set_coop_spawning
+        ```
+        comment
+  - slug: player_set_fireteam_index
+    info:
+      en: |-
+        ```megalo
+        player_set_fireteam_index
+        ```
+        comment
+  - slug: player_set_objective
+    info:
+      en: |-
+        ```megalo
+        player_set_objective
+        ```
+        comment
+  - slug: player_set_objective_allegiance
+    info:
+      en: |-
+        ```megalo
+        player_set_objective_allegiance
+        ```
+        comment
+  - slug: player_set_objective_allegiance_icon
+    info:
+      en: |-
+        ```megalo
+        player_set_objective_allegiance_icon
+        ```
+        comment
+  - slug: player_set_primary_respawn_object
+    info:
+      en: |-
+        ```megalo
+        player_set_primary_respawn_object
+        ```
+        comment
+  - slug: player_set_requisition_palette
+    info:
+      en: |-
+        ```megalo
+        player_set_requisition_palette
+        ```
+        comment
+  - slug: player_set_unit
+    info:
+      en: |-
+        ```megalo
+        player_set_unit
+        ```
+        comment
+  - slug: player_set_vehicle
+    info:
+      en: |-
+        ```megalo
+        player_set_vehicle
+        ```
+        comment
+  - slug: player_set_vehicle_spawning
+    info:
+      en: |-
+        ```megalo
+        player_set_vehicle_spawning
+        ```
+        comment
+  - slug: PlayerEnableSpawning
+    info:
+      en: |-
+        ```megalo
+        PlayerEnableSpawning
+        ```
+        comment
+  - slug: PlayerForceRespawn
+    info:
+      en: |-
+        ```megalo
+        PlayerForceRespawn
+        ```
+        comment
+  - slug: playerGetUltimateParentNotSelf
+    info:
+      en: |-
+        ```megalo
+        playerGetUltimateParentNotSelf
+        ```
+        comment
+  - slug: PlayerIsDetectable
+    info:
+      en: |-
+        ```megalo
+        PlayerIsDetectable
+        ```
+        comment
+  - slug: PlayerReportHealthAsShields
+    info:
+      en: |-
+        ```megalo
+        PlayerReportHealthAsShields
+        ```
+        comment
+  - slug: PlaySoundOnObject
+    info:
+      en: |-
+        ```megalo
+        PlaySoundOnObject
+        ```
+        comment
+  - slug: print_variable
+    info:
+      en: |-
+        ```megalo
+        print_variable
+        ```
+        comment
+  - slug: PulseNavpoint
+    info:
+      en: |-
+        ```megalo
+        PulseNavpoint
+        ```
+        comment
+  - slug: random
+    info:
+      en: |-
+        ```megalo
+        random
+        ```
+        comment
+  - slug: RandomOrdnanceDoDrop
+    info:
+      en: |-
+        ```megalo
+        RandomOrdnanceDoDrop
+        ```
+        comment
+  - slug: RandomOrdnanceGetEnabled
+    info:
+      en: |-
+        ```megalo
+        RandomOrdnanceGetEnabled
+        ```
+        comment
+  - slug: RandomOrdnanceSetCount
+    info:
+      en: |-
+        ```megalo
+        RandomOrdnanceSetCount
+        ```
+        comment
+  - slug: RandomOrdnanceSetDelay
+    info:
+      en: |-
+        ```megalo
+        RandomOrdnanceSetDelay
+        ```
+        comment
+  - slug: RandomOrdnanceSetEnabled
+    info:
+      en: |-
+        ```megalo
+        RandomOrdnanceSetEnabled
+        ```
+        comment
+  - slug: respawn_zone_enable
+    info:
+      en: |-
+        ```megalo
+        respawn_zone_enable
+        ```
+        comment
+  - slug: saved_film_insert_marker
+    info:
+      en: |-
+        ```megalo
+        saved_film_insert_marker
+        ```
+        comment
+  - slug: set
+    info:
+      en: |-
+        ```megalo
+        set
+        ```
+        comment
+  - slug: set_boundary
+    info:
+      en: |-
+        ```megalo
+        set_boundary
+        ```
+        comment
+  - slug: set_fireteam_respawn_filter
+    info:
+      en: |-
+        ```megalo
+        set_fireteam_respawn_filter
+        ```
+        comment
+  - slug: set_loadout_palette
+    info:
+      en: |-
+        ```megalo
+        set_loadout_palette
+        ```
+        comment
+  - slug: set_pickup_filter
+    info:
+      en: |-
+        ```megalo
+        set_pickup_filter
+        ```
+        comment
+  - slug: set_player_respawn_vehicle
+    info:
+      en: |-
+        ```megalo
+        set_player_respawn_vehicle
+        ```
+        comment
+  - slug: set_progress_bar
+    info:
+      en: |-
+        ```megalo
+        set_progress_bar
+        ```
+        comment
+  - slug: set_respawn_filter
+    info:
+      en: |-
+        ```megalo
+        set_respawn_filter
+        ```
+        comment
+  - slug: set_scenario_interpolator_state
+    info:
+      en: |-
+        ```megalo
+        set_scenario_interpolator_state
+        ```
+        comment
+  - slug: set_score
+    info:
+      en: |-
+        ```megalo
+        set_score
+        ```
+        comment
+  - slug: set_team_respawn_vehicle
+    info:
+      en: |-
+        ```megalo
+        set_team_respawn_vehicle
+        ```
+        comment
+  - slug: SetAutoTurret
+    info:
+      en: |-
+        ```megalo
+        SetAutoTurret
+        ```
+        comment
+  - slug: SetAutoTurretRange
+    info:
+      en: |-
+        ```megalo
+        SetAutoTurretRange
+        ```
+        comment
+  - slug: SetCandySpawnerActive
+    info:
+      en: |-
+        ```megalo
+        SetCandySpawnerActive
+        ```
+        comment
+  - slug: SetCurrentRoundString
+    info:
+      en: |-
+        ```megalo
+        SetCurrentRoundString
+        ```
+        comment
+  - slug: SetMedalOverride
+    info:
+      en: |-
+        ```megalo
+        SetMedalOverride
+        ```
+        comment
+  - slug: SetMedalScoring
+    info:
+      en: |-
+        ```megalo
+        SetMedalScoring
+        ```
+        comment
+  - slug: SetMegaloObjectFunction
+    info:
+      en: |-
+        ```megalo
+        SetMegaloObjectFunction
+        ```
+        comment
+  - slug: SetMegaloTimerObjectFunction
+    info:
+      en: |-
+        ```megalo
+        SetMegaloTimerObjectFunction
+        ```
+        comment
+  - slug: SetModeObjectiveTextLine
+    info:
+      en: |-
+        ```megalo
+        SetModeObjectiveTextLine
+        ```
+        comment
+  - slug: SetMomentum
+    info:
+      en: |-
+        ```megalo
+        SetMomentum
+        ```
+        comment
+  - slug: SetMomentumTickRate
+    info:
+      en: |-
+        ```megalo
+        SetMomentumTickRate
+        ```
+        comment
+  - slug: SetPlayerMinDeathSeconds
+    info:
+      en: |-
+        ```megalo
+        SetPlayerMinDeathSeconds
+        ```
+        comment
+  - slug: SetPreviousRoundString
+    info:
+      en: |-
+        ```megalo
+        SetPreviousRoundString
+        ```
+        comment
+  - slug: SetProgressBarUserData
+    info:
+      en: |-
+        ```megalo
+        SetProgressBarUserData
+        ```
+        comment
+  - slug: SetSentryActive
+    info:
+      en: |-
+        ```megalo
+        SetSentryActive
+        ```
+        comment
+  - slug: SetSentryBarrelActive
+    info:
+      en: |-
+        ```megalo
+        SetSentryBarrelActive
+        ```
+        comment
+  - slug: SetTeamWinLossString
+    info:
+      en: |-
+        ```megalo
+        SetTeamWinLossString
+        ```
+        comment
+  - slug: SetTeleporterChannel
+    info:
+      en: |-
+        ```megalo
+        SetTeleporterChannel
+        ```
+        comment
+  - slug: SetTerritoryFriendlyAndSelectedZoneSpawnWeightBonus
+    info:
+      en: |-
+        ```megalo
+        SetTerritoryFriendlyAndSelectedZoneSpawnWeightBonus
+        ```
+        comment
+  - slug: SetTerritoryLastStandImminentTeam
+    info:
+      en: |-
+        ```megalo
+        SetTerritoryLastStandImminentTeam
+        ```
+        comment
+  - slug: SetWinningPlayerForFinalKillCam
+    info:
+      en: |-
+        ```megalo
+        SetWinningPlayerForFinalKillCam
+        ```
+        comment
+  - slug: submit_incident
+    info:
+      en: |-
+        ```megalo
+        submit_incident
+        ```
+        comment
+  - slug: submit_incident_with_custom_value
+    info:
+      en: |-
+        ```megalo
+        submit_incident_with_custom_value
+        ```
+        comment
+  - slug: team_get_place
+    info:
+      en: |-
+        ```megalo
+        team_get_place
+        ```
+        comment
+  - slug: team_set_coop_spawning
+    info:
+      en: |-
+        ```megalo
+        team_set_coop_spawning
+        ```
+        comment
+  - slug: team_set_primary_respawn_object
+    info:
+      en: |-
+        ```megalo
+        team_set_primary_respawn_object
+        ```
+        comment
+  - slug: team_set_vehicle_spawning
+    info:
+      en: |-
+        ```megalo
+        team_set_vehicle_spawning
+        ```
+        comment
+  - slug: TeamGetIndex
+    info:
+      en: |-
+        ```megalo
+        TeamGetIndex
+        ```
+        comment
+  - slug: timer_reset
+    info:
+      en: |-
+        ```megalo
+        timer_reset
+        ```
+        comment
+  - slug: timer_set_rate
+    info:
+      en: |-
+        ```megalo
+        timer_set_rate
+        ```
+        comment
+  - slug: TrackCarriedObjectState
+    info:
+      en: |-
+        ```megalo
+        TrackCarriedObjectState
+        ```
+        comment
+  - slug: weapon_set_pickup_priority
+    info:
+      en: |-
+        ```megalo
+        weapon_set_pickup_priority
+        ```
+        comment

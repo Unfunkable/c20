@@ -121,6 +121,15 @@ Actions are the core of gametype scripting, and control the actual logic behind 
 
 # Megalo script reference
 ## Condition list
+{% dataTable
+  dataPath="megalo/conditions/conditions"
+  linkCol=true
+  linkSlugKey="slug"
+  rowSortKey="slug"
+  columns=[
+    {name: "Condition", key: "info/en"}
+  ]
+/%}
 ## Action list
 {% dataTable
   dataPath="megalo/actions/actions"
@@ -131,6 +140,3 @@ Actions are the core of gametype scripting, and control the actual logic behind 
     {name: "Action", key: "info/en"}
   ]
 /%}
-## Sound list
-## Object list
-## Weapon list

@@ -1,1 +1,176 @@
-﻿
+﻿conditions:
+  - slug: if
+    info:
+      en: |-
+        ```megalo
+        if
+        ```
+        comment
+  - slug: object_in_area
+    info:
+      en: |-
+        ```megalo
+        object_in_area
+        ```
+        comment
+  - slug: player_died
+    info:
+      en: |-
+        ```megalo
+        player_died
+        ```
+        comment
+  - slug: WasRecentlyDamagedBy
+    info:
+      en: |-
+        ```megalo
+        WasRecentlyDamagedBy
+        ```
+        comment
+  - slug: team_disposition
+    info:
+      en: |-
+        ```megalo
+        team_disposition
+        ```
+        comment
+  - slug: timer_expired
+    info:
+      en: |-
+        ```megalo
+        timer_expired
+        ```
+        comment
+  - slug: object_is_type
+    info:
+      en: |-
+        ```megalo
+        object_is_type
+        ```
+        comment
+  - slug: team_is_active
+    info:
+      en: |-
+        ```megalo
+        team_is_active
+        ```
+        comment
+  - slug: object_out_of_bounds
+    info:
+      en: |-
+        ```megalo
+        object_out_of_bounds
+        ```
+        comment
+  - slug: player_is_fire_team_leader
+    info:
+      en: |-
+        ```megalo
+        player_is_fire_team_leader
+        ```
+        comment
+  - slug: player_assisted_with_kill
+    info:
+      en: |-
+        ```megalo
+        player_assisted_with_kill
+        ```
+        comment
+  - slug: object_matches_filter
+    info:
+      en: |-
+        ```megalo
+        object_matches_filter
+        ```
+        comment
+  - slug: player_is_active
+    info:
+      en: |-
+        ```megalo
+        player_is_active
+        ```
+        comment
+  - slug: equipment_is_active
+    info:
+      en: |-
+        ```megalo
+        equipment_is_active
+        ```
+        comment
+  - slug: player_is_spartan
+    info:
+      en: |-
+        ```megalo
+        player_is_spartan
+        ```
+        comment
+  - slug: player_is_elite
+    info:
+      en: |-
+        ```megalo
+        player_is_elite
+        ```
+        comment
+  - slug: player_is_editor
+    info:
+      en: |-
+        ```megalo
+        player_is_editor
+        ```
+        comment
+  - slug: game_is_forge
+    info:
+      en: |-
+        ```megalo
+        game_is_forge
+        ```
+        comment
+  - slug: vehicle_entered
+    info:
+      en: |-
+        ```megalo
+        vehicle_entered
+        ```
+        comment
+  - slug: vehicle_exited
+    info:
+      en: |-
+        ```megalo
+        vehicle_exited
+        ```
+        comment
+  - slug: vehicle_jacked
+    info:
+      en: |-
+        ```megalo
+        vehicle_jacked
+        ```
+        comment
+  - slug: is_update_frame
+    info:
+      en: |-
+        ```megalo
+        is_update_frame
+        ```
+        comment
+  - slug: current_incident
+    info:
+      en: |-
+        ```megalo
+        current_incident
+        ```
+        comment
+  - slug: object_physics_collided
+    info:
+      en: |-
+        ```megalo
+        object_physics_collided
+        ```
+        comment
+  - slug: WeaponIsHeldByHologram
+    info:
+      en: |-
+        ```megalo
+        WeaponIsHeldByHologram
+        ```
+        comment
