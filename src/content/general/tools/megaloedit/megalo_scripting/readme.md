@@ -103,7 +103,7 @@ end
 | `pregame` | Event | Fires once before the start of a match. |
 
 ### Nested triggers
-Nested triggers are triggers that are run inside of another. They are called by the action `for_each`, and the trigger type can be specified as one of the parameters.
+Nested triggers, also referred to as subtriggers, are triggers that are run inside of another. They are called by the action `for_each`, and the trigger type can be specified as one of the parameters.
 ```megalo
 trigger object
     action for_each player

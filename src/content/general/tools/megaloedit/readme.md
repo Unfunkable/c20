@@ -20,7 +20,7 @@ The text box is where Megalo code is typed. It features syntax highlighting, liv
 
 Unintentionally, the text box appears to support rich text and images. These are stripped when the file is saved.
 ## Error List
-The Error List lies just below the text box. If no errors have been sent, it will initially appear blank. It will output any warnings or errors the program encounters if a gametype is built.
+The Error List lies just below the text box. If no errors have been sent, it will appear blank. It will output any warnings or errors the program encounters if a gametype is built.
 ## Status bar
 The Status Bar runs along the bottom of the main window and can display the syntax of the closest action or condition. Square brackets denotes an optional parameter, curly braces indicate a choice, and paranthesis contain extra information.
 ## Non-functional/Unknown
