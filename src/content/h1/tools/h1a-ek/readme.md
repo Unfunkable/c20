@@ -61,104 +61,131 @@ Pictured: Location of the mod tools in the steam library.
 1. Make sure you didn't update any stock tags, and if you did make a backup of those files.
 2. Re-run `Extract (HCEEK).bat` and replace all files.
 
-# What's new in the September update
+# Changelog
+This changelog is focused on known notable modding-related changes and is not guaranteed to be complete.
 
-## General
+## July 2023
+* Inclusion of digsite content.
+* Biped seats are now functional, meaning rideable bipeds are possible.
+* BSPs without [lightmaps](~) now properly render fullbright rather than being invisible.
+* Added a [weapon flag](~weapon#tag-field-weapon-flags-uses-3rd-person-camera) to use third person camera while holding it.
+* Added 4 new outer center anchors for HUD elements (usable in [hud_globals](~), [grenade_hud_interface](~), [unit_hud_interface](~), and [weapon_hud_interface](~)).
+* Added a new bitmap compression format, BC7 [_high-quality compression_](~bitmap#tag-field-encoding-format-high-quality-compression).
+* Alpha channel is no longer discarded when importing fully transparent bitmaps to an uncompressed format.
+* Added the [_alternate bump attenuation_ flag](~shader_environment#tag-field-shader-environment-flags-use-alternate-bump-attenuation) to shader_environment to prevent [shading artifacts](~h1/tags/shader/shader_environment#shading-artifacts).
+* Raised [model_animations _units_](~model_animations#tag-field-units) limit to 512, matching [OpenSauce](~).
+* Resetting a player's inventory through the HS function `player_add_equipment` no longer causes an exception.
+* Trigger volume placement is no longer buggy after the first. This required hiding their parameter fields under expert mode.
+* Classic mode HUD text elements scale properly.
+* Console messages warning of generic shaders missing maps/stages now specify which shader.
+* Fog planes can now be reassigned back to "none" using Sapien.
+* AI enable and disable now use correct command in debug menu.
+* Fixed rename.txt sometimes crashing Tool during imports.
+* Fixed a shading artifact on shader_environment when lightmaps contain invalid incident radiosity vectors.
+* Standalone no longer crashes when rapidly reloading and meleeing at the same time.
+* Added secondary reload animation support for weapons with dual triggers and magazines.
+* Sapien no longer crashes on close if you have selected the trigger volume node and there exist trigger volumes.
+* [Filthy part indices in gbxmodel](~gbxmodel#tag-field-geometries-parts-prev-filthy-part-index) now only default to `-1` if both prev and next indices are `0`.
+* Standalone no longer raises asserts when loading certain old profile save data.
+* [`rasterizer_stats 2`](~scripting#external-globals-rasterizer-stats) no longer causes buggy rendering and crashes.
+* Addition of new script functions and globals:
+  * Globals: [`breadcrumbs_navpoints_enabled_override`](~scripting#functions-globals-breadcrumbs-navpoints-enabled-override), [`rasterizer_debug_shader_transparent_generic`](~scripting#functions-globals-rasterizer-debug-shader-transparent-generic).
+  * Functions: [`screenshot_cubemap`](~scripting#functions-screenshot-cubemap) (h2 backport), [`breadcrumbs_nav_points_active`](~scripting#functions-breadcrumbs-nav-points-active).
 
+## December 2022
+* [A flag](~bitmap#tag-field-flags-use-average-color-for-detail-fade) was added to the bitmap tag that allows users to opt into Halo 2's mipmap fade behaviour rather than it being the default.
+* Vertex explosion when going above 30 FPS fixed.
+
+## September 2022
+
+General:
 * New script functions `sleep_forever`, `debug_script_thread`, `debug_scripting`, `breakpoint`, `kill_active_scripts`, `get_executing_running_thread`, `kill_thread`, `script_started` and `script_finished`
 * New script globals `hs_verbose` and `breakpoints_enabled`
 * Support for script parameters similar to the ones seen in H3+.
 * First person permutations will match the third person permutations when object render models match.
 * The Movement Penalized field in weapon tags is now functional.
 * HUD prompts for actions such as entering vehicles will now display correctly.
+* Remove hard-coded behaviour in Tool that prevented `tool structure levels\b20 b20` from being able to find any shader tags.
 
-## Content
-
+Content:
 * Various changes to tags and data files. Updating your tag set is highly recommended.
 
-## Guerilla
-
+Guerilla:
 * Mouseover text for the inconsequential flag is no longer cut off.
 * Added support for 3rd and 4th grenade slots.
 * Added flag to toggle runtime tag patches to the scenario tag.
 
-## Standalone
-
+Standalone:
 * The command `core_load_name` now loads instead of saving.
 * The debug menu now has the option for `debug_menu_rebuild`
 * The command `player_spawn_count` will no longer cause an assertion when used without multiple controllers.
 * Decals will no longer appear in front of geometry when viewed from a certain distance.
 
-## Tool
-
+Tool:
 * Zoom in hud messages will no longer be treated as crouch when importing strings.
 
-# What's new in the March update
+## March 2022
 
-## General
-
+General:
 * Add script function `game_time_authoritative`
 
-## Content
+Content:
 * Fixed mirrors on AOTCR showing clipping near the player boots. This is a tag change so make sure to update your files for this to take effect.
 * Various changes to tags and data zips. Updating your tag set is highly recommended.
 
-## Guerilla
-
+Guerilla:
 * Fix flags displaying weirdly unless the window was refreshed.
 
-## Sapien
-
+Sapien:
 * Now has a debug menu similar to the one seen in H2+. Commands can be defined in the debug_menu_init.txt found in the root folder.
 * Fixed mouse sensitivity in vehicle and zoom.
 
-## Standalone
+Standalone:
 * Now supports loading MP scenarios for testing.
 * Now has a debug menu similar to the one seen in H2+. Commands can be defined in the debug_menu_init.txt found in the root folder.
 * Fixed mouse sensitivity in vehicle and zoom.
 
-# What's new in the season 8 hotfix v1
+## November 2021
 
-## Sapien
+Sapien:
 * Autocomplete in console should display columns a little more evenly.
 * Game view window now uses an aspect ratio that fits the size the user sets. 
 * Fix toggling "Draw transparent geometry" causing a crash.
 * UI tooltips should flicker less. 
 
-## Guerilla
+Guerilla:
 * UI tooltips should flicker less. 
 
+## October 2021
 
-# What's new in season 8?
-
-## General
-
+General:
 * Many changes to the base game will also apply to the tools. Reading the official update is recommended.
-* Some functions for handling tag names and Unicode string list were changed to more gracefully handle missing data.
+* Some functions for handling tag names and [unicode_string_list](~) were changed to more gracefully handle missing data.
 
-## Content
+Content:
 * Tags were updated to season 8 content. Updating your tag set is highly recommended.
 * Shader source code is now included.
 
-## FBX
-
+Tool:
 * FBX converter performance was improved.
-* Fixed marker radius not being handled correctly.
+* Fixed FBX marker radius not being handled correctly.
 
-## Guerilla
-
+Guerilla:
 Some tag field names were changed to better reflect their usage, used fields were hidden and some tooltips were updated.
 
-## Sapien
-Some of these also apply to standalone or MCC itself.
-
+Sapien:
+* Some of these also apply to standalone or MCC itself.
 * A rare vertex explosion issue that occurred when the framerate was not capped was fixed.
 * Real time mirror rendering was fixed.
 * A crash that could occur when rotating objects was fixed.
 * Framebuffer blend function `double multiply` was changed to better match Custom Edition, enabled for H1CE maps and tags that set "custom edition blending".
 * Windows can now be automatically re-arranged using the *Window* menu (works similarly to Guerilla)
 
-# What's new for HEK users?
+# Comparison to the HEK
+{% figure src="kornman.jpg" %}
+Pictured: kornman00 eliminating editing kit bugs, circa June 2021
+{% /figure %}
+
 If you're coming from the legacy [HEK](~hek) for Custom Edition or earlier versions of MCC you may be wondering what's new and great about the updated H1A tools and engine. Don't worry, we've got you covered!
 
 The season 7 MCC update ([patch notes](https://support.halowaypoint.com/hc/en-us/articles/4402601893268-Halo-The-Master-Chief-Collection-MCC-Patch-Notes-June-2021)) is a significant milestone for the Halo 1 engine. It represents the [recombination of code](/h1/games.svg) and tags from Anniversary, Custom Edition, OG Xbox. Many aspects of [Halo 2's tools](~H2V-EK) or limits from later games have even been backported. Mod support is likely to continue beyond season 7 in a phased approach. The tools can receive updates over time owing to their distribution via [Steam][].
@@ -237,10 +264,6 @@ The season 7 MCC update ([patch notes](https://support.halowaypoint.com/hc/en-us
   * Fixes for various unsafe code: uninitialized variables, bad `printf` args, etc.
 
 ## Sapien
-{% figure src="kornman.jpg" %}
-Pictured: kornman00 eliminating editing kit bugs, circa June 2021
-{% /figure %}
-
 * When [Sapien](~h1a-sapien) crashes it will attempt to autosave the scenario to a new file.
 * The [lightmap](~lightmaps) painting feature was fixed. The user can perform touchups to fix light leaks or add missing lights and save changes to the lightmap.
 * Garbage collection now takes into account Sapien's 5x higher objects per map and object memory pool limits so Sapien no longer spams "garbage collection critical" errors after loading the c10 scenario.

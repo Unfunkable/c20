@@ -19,8 +19,14 @@ type_defs:
     size: 4
     bits:
       - name: vertical_heat_display
+        meta:
+          unused: true
       - name: mutually_exclusive_triggers
+        meta:
+          unused: true
       - name: attacks_automatically_on_bump
+        meta:
+          unused: true
       - name: must_be_readied
       - name: doesn't_count_toward_maximum
         comments:
@@ -31,7 +37,11 @@ type_defs:
       - name: aim_assists_only_when_zoomed
       - name: prevents_grenade_throwing
       - name: must_be_picked_up
+        meta:
+          unused: true
       - name: holds_triggers_when_dropped
+        meta:
+          unused: true
       - name: prevents_melee_attack
       - name: detonates_when_dropped
         comments:
@@ -42,8 +52,24 @@ type_defs:
       - name: cannot_fire_at_maximum_age
       - name: secondary_trigger_overrides_grenades
       - name: obsolete_does_not_depower_active_camo_in_multilplayer
+        meta:
+          unused: true
       - name: enables_integrated_night_vision
       - name: ais_use_weapon_melee_damage
+      - name: prevents_crouching
+        meta:
+          h1a_only: true
+          unused: true
+        comments:
+          en: Planned backport from H3, currently unused.
+      - name: uses_3rd_person_camera
+        meta:
+          h1a_only: true
+        comments:
+          en: >
+            While this weapon is held the player will have a third person view.
+            The player unit's [second _camera track_](~unit#tag-field-camera-tracks)
+            is used for this. The camera smoothly transitions to/from third person.
   WeaponSecondaryTriggerMode:
     class: enum
     size: 2
@@ -82,13 +108,16 @@ type_defs:
     options:
       - name: always
         comments:
-          en: No effect.
+          en: >
+             Movement is penalized at all times while held.
       - name: when_zoomed
         comments:
-          en: No effect.
+          en: >
+            Movement is penalized only when zoomed in.
       - name: when_zoomed_or_reloading
         comments:
-          en: No effect.
+          en: >
+            **Bugged.** Movement is penalized only when _not_ reloading.
   WeaponType:
     class: enum
     size: 2
@@ -197,7 +226,9 @@ type_defs:
         comments:
           en: >
             Makes the trigger behave like a switch. Tap it to turn it on. Tap it
-            again to turn it off.
+            again to turn it off. While on, weapon will continue firing while
+            meleeing or throwing grenades, when dropped, and when switched,
+            firing in unexpected directions in the latter two states.
       - name: projectiles_use_weapon_origin
         comments:
           en: >
@@ -207,17 +238,27 @@ type_defs:
       - name: sticks_when_dropped
         comments:
           en: >
-            If true the weapon will keep the trigger state from the time it was
-            dropped. If it was being held while dropped it will continue being
-            held.
+            If true the weapon's trigger will be held down when it is dropped,
+            regardless of whether it was held down by the wielder at the time.
+            These dropped weapons will expend ammunition but not build up age.
       - name: ejects_during_chamber
       - name: discharging_spews
+        comments:
+          en: >
+            If true and the trigger is set to discharge on overcharge, will
+            automatically fire every tick for the duration of spew time.
       - name: analog_rate_of_fire
       - name: use_error_when_unzoomed
         comments:
           en: |
-            Makes the trigger always fire completely accurately when zoomed in.
+            Makes the trigger always fire completely accurately when zoomed in,
+            disregarding the triggers' defined error values.
       - name: projectile_vector_cannot_be_adjusted
+        comments:
+          en: >
+            Forces projectiles to be fired in the direction the gun (more precisely
+            the gun's trigger marker) is facing, rather than the direction the
+            wielder is looking. Most relevant for vehicle-mounted weapons.
       - name: projectiles_have_identical_error
         comments:
           en: >
@@ -262,6 +303,10 @@ type_defs:
     size: 2
     options:
       - name: point
+        comments:
+          en: >
+            Causes projectiles' firing angle to be randomly offset by a number
+            between the minimum error and the current error angle (see below).
       - name: horizontal_fan
         comments:
           en: >
@@ -297,6 +342,10 @@ type_defs:
             - effect
       - name: firing_damage
         type: TagDependency
+        comments:
+          en: >
+            Damage effect applied to the wielder when a shot
+            is normally fired. Used for camera shaking, etc.
         meta:
           tag_classes:
             - damage_effect
@@ -781,25 +830,34 @@ type_defs:
         size: 4
       - name: movement_penalized
         type: WeaponMovementPenalized
+        meta:
+          h1a_only: true
         comments:
           en: >
-            **Unused**. This was meant to slow the player when using certain
-            weapons like the rocket launcher, but it has no effect ingame
-            regardless of the options, penalty values used, or game mode.
+            Present in previous versions, but has no effect in them. Reduces or
+            inverts player movement by a fraction when this weapon is held. 
       - type: pad
         size: 2
       - name: forward_movement_penalty
         type: Fraction
         comments:
-          en: No effect.
+          en: >
+            The fraction of movement speed lost when moving forward or backward.
+            A value of 1.0 prevents movement. Values greater than 1.0 invert input,
+            up to 2.0 which gives full movement speed in the opposite direction.
       - name: sideways_movement_penalty
         type: Fraction
         comments:
-          en: No effect.
+          en: >
+            As above, but for movement from side to side.
       - type: pad
         size: 4
       - name: minimum_target_range
         type: float
+        comments:
+          en: >
+            AI actors will not fire this weapon on targets below this range;
+            but Overcharge [special fire mode](~actor_variant#tag-field-special-fire-mode-overcharge) will ignore this setting.
       - name: looking_time_modifier
         type: float
       - type: pad

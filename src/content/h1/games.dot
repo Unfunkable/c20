@@ -20,6 +20,7 @@ digraph G {
     node [style=filled color="#c8cc86"];
     pc_beta1 [label="H1PC beta\nBuild: 01.05.22.0268"];
     pc_beta2 [label="H1PC beta \"1.5\"\nBuild: 01.07.30.0452\nCache version: 7"];
+    pc_beta3 [label="H1PC marketing beta \"1.8\"\nBuild: 01.08.05.0452 \nCache version: 7"];
     pc_gold [label="H1PC gold master\nBuild: 01.00.00.0563\nCache version: 7"];
     pc_100 [label="H1PC 1.00 retail release\nBuild: 01.00.00.0564\nCache version: 7"];
     pc_101 [label="H1PC 1.01"];
@@ -57,7 +58,7 @@ digraph G {
     h1a_xbone_china [label="H1A \"Pegasus\" (China) (XB1)"];
     h1a_pc [label="H1A MCC (PC)"];
     h1a_pc_s7 [label="H1A MCC (PC)\nSeason 7"];
-    h1a_pc_live [label="", fixedsize="false", width=0, height=0, shape=none];
+    h1a_pc_live [label="H1A MCC (PC)\nActive updates"];
     h1a_xbone_live [label="", fixedsize="false", width=0, height=0, shape=none];
   }
 
@@ -66,6 +67,7 @@ digraph G {
   #other games
   node [style=filled color="#88afaf"];
   h2 [label="Halo 2"];
+  odst [label="Halo 3 ODST"];
 
   h1x_pre -> h1x_1749;
   h1x_1749 -> h1x_ntsc_beta;
@@ -76,6 +78,7 @@ digraph G {
   h1x_pre -> pc_beta1 [label="Code"];
   pc_beta1 -> pc_beta2;
   h1x_ntsc_retail -> pc_beta2 [label="Some tags"];
+  pc_beta2 -> pc_beta3;
   pc_beta2 -> pc_gold [label="(MP scoreboard made to use console font)"];
   h1x_ntsc_retail -> pc_gold [label="Most tags"];
   pc_gold -> pc_100 [label="(MP scoreboard fixed by\nchanging console font in globals)"];
@@ -130,5 +133,7 @@ digraph G {
   h1ce_110 -> h1a_pc_s7 [label="Code"];
   h1x_ntsc_retail -> h1a_pc_s7 [label="Tags"];
   h2 -> h1a_pc_s7 [label="Code"];
-  h1a_pc_s7 -> h1a_pc_live [label="Active updates"];
+  h2 -> h1a_pc_live [label="Modding features"];
+  odst -> h1a_pc_live [label="Netcode"];
+  h1a_pc_s7 -> h1a_pc_live;
 }

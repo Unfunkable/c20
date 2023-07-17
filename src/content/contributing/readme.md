@@ -149,6 +149,14 @@ thanks:
   PersonName: Explaining how actors work
   "Person Name": Writing this guide
 
+# If provided, child pages of this one will be ordered as follows in the
+# navigation tree. Otherwise child pages are ordered alphabetically by their
+# slug (last part of their URL).
+childOrder:
+  - general
+  - h1
+  - h2
+
 # Excludes the page from the search index. Use this for pages which are
 # incomplete or people won't need to search for.
 noSearch: true
@@ -182,7 +190,7 @@ The **scenario structure BSP** tag, commonly just called the **BSP**, contains l
 ```
 
 ## Writing style
-* When writing guide/tutorial pages you can use a more conversational voice. Otherwise, use a "textbook" or Wikipedia style of writing
+* Use a "textbook" or Wikipedia style of writing. When writing guide/tutorial pages you can be a little more conversational, using phrases like "you will see a..." or "next we need to...".
 * Make points plainly with simple English and avoid expressions unfamiliar to those whose first language is not English.
 * There is no strong preference at this time for UK/Canada vs. US spelling of words like colour, unless you are referring to a tag's field name which should match exactly.
 * Assume your reader is a novice. Include links to prerequisite information and other pages to fill out concepts. Use examples that the reader might be familiar with to help get your points across.
@@ -219,6 +227,7 @@ Always use _sentence case_, with the first word capitalized only. The exception 
 * Compatibility
 * Troubleshooting
 * Installation
+* Changelog
 * Usage
 * Appendix
 
@@ -435,8 +444,8 @@ The [H1 tags list](~h1/tags#tags-list) reads `src/data/tags/h1.yml` and looks li
   id="tags"
   rowSortKey="key"
   linkSlugKey="key"
-  rowFilterKey="value/unused"
-  rowFilterNot=true
+  rowFilterKey="value"
+  rowFilterExpr="NOT unused"
   columns=[
     {name: "Tag name", key: "key", format: "pageLinkRaw"},
     {name: "Group ID", key: "value/id", format: "code"},
@@ -452,9 +461,8 @@ Supported options:
 * `id`: Determines the prefix for HTML ID attributes given to each row. Choose something unique.
 * `rowSortKey`: A slash-separated path into each row which selects a value to sort rows by.
 * `rowSortReverse`: If `true`, reverses the sort order.
-* `rowFilterKey`: A slash-separated path into each row which selects a value to filter by.
-* `rowFilterValue`: Row filter values are compared against this value. If not provided, rows are filtered by the value's truthiness/presence.
-* `rowFilterNot`: If `true`, inverts the filter condition.
+* `rowFilterKey`: A slash-separated path into each row which selects values to filter by. If the path is to an object, truthy keys will be selected. If an array, truthy values will be selected as strings. Otherwise the value is stringified.
+* `rowFilterExpr`: The seleted row filter values will be filtered by this logical expression. See [voll](https://github.com/kikobeats/voll).
 * `linkCol`: If `true`, adds a column with linkable anchors for easy sharing. If this is a numeric index then then cells of the indexed column will become the clickable links.
 * `linkSlugKey`: A slash-separated path into each row which selects a value to append to `id` for anchor links. Defaults to the value of `linkCol` if numeric.
 * `noClear`: If `true`, allows the table to fit beside figures or the metabox without having to clear floating elements. Not suitable for long or wide tables.
@@ -500,7 +508,7 @@ You can easily add a [table of related script functions and globals](~h1/tags/sc
 {% relatedHsc game="h1" tagFilter="lightmaps" /%}
 ```
 
-This takes data from `src/data/hsc/<game>/*.yml` and filters by each row's `tags` list. You can optionally provide `only="globals"` or `only="functions"` to limit the selection.
+This takes data from `src/data/hsc/<game>/*.yml` and filters by each row's `tags` list if `tagFilter` is present. You can optionally provide `only="globals"` or `only="functions"` to limit the selection.
 
 ## Misc. features
 These features are only used for a few specific cases:
@@ -509,6 +517,7 @@ These features are only used for a few specific cases:
 * The [scale page](~scale) uses `{% unitConverter /%}`.
 * This page uses `{% thanksIndex /%}` to list [all contributors](#contributor-list) from all pages.
 * You can comment out some markdown by surrounding it with `{% comment %}..{% /comment %}`.
+* A list of child pages can be created with `{% childList /%}`.
 
 # Appendix
 ## Struct definitions

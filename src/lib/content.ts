@@ -24,12 +24,14 @@ export type PageFrontMatter = {
   stub?: boolean;
   related?: string[];
   redirects?: PageId[];
+  childOrder?: string[];
 };
 
 export type PageLink = {
   title: string;
   url: string;
   pageId: string;
+  logicalPathTail: string;
 };
 
 export type PageData = {
@@ -94,6 +96,17 @@ export async function loadPageIndex(contentDir: string): Promise<PageIndex> {
       };
     }
   }));
+
+  const missing = {};
+  Object.entries(pages).forEach(([pageId, page]) => {
+    const parentPage = [...page["en"].logicalPath];
+    parentPage.pop();
+    const parentId = logicalToPageId(parentPage);
+    if (parentId != "/" && parentId != "/utility" && !pages[parentId] && !missing[parentId]) {
+      console.warn(`Missing parent page ID: ${parentId}`);
+      missing[parentId] = true;
+    }
+  });
 
   return pages;
 };
@@ -167,6 +180,7 @@ function createPageLink(pageIndex: PageIndex, pageId: string, lang: Lang, headin
   return {
     title: tryLocalizedTitle(pageIndex, pageId, lang),
     url: tryLocalizedPath(pageIndex, pageId, lang, headingId),
+    logicalPathTail: pageIndex[pageId][lang].logicalPathTail,
     pageId,
   };
 }
@@ -201,7 +215,13 @@ export function getPageChildren(pageIndex: PageIndex, pageId: string, lang: Lang
         children.push(createPageLink(pageIndex, cPageId, lang)!);
       }
     });
-  return children;
+  return R.sortWith(
+    [
+      R.ascend((c: PageLink) => pageIndex[pageId][lang].front.childOrder?.indexOf(c.logicalPathTail)),
+      R.ascend((c: PageLink) => c.logicalPathTail)
+    ],
+    children
+  );
 };
 
 export function getPageParents(pageIndex: PageIndex, pageId: PageId, lang: Lang): PageLink[] {

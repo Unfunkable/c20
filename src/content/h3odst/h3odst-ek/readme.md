@@ -1,6 +1,5 @@
 ---
 title: Halo 3 ODST Editing Kit
-stub: true
 about: 'tool:H3ODST-EK'
 img: h3odstek.jpg
 caption: >-
@@ -9,6 +8,11 @@ caption: >-
 info: |
   * Release date: October 2022
   * [Report issues](JIF_ISSUE_URL)
+keywords:
+  - h3odst-ek
+  - h3odstek
+  - odst-ek
+  - odst
 ---
 The **Halo 3 ODST Editing Kit** (**H3ODSTEK**) is the official set of tools for creating custom content for the MCC version of Halo 3 ODST. It was first released by 343 Industries alongside the latest update as of March 2022.
 Similarly to the mod tools for Halo 1, 2, and 3 it is ultimately based on the old internal tools used by Bungie during the development of Halo 3, with modifications made during the porting of the game to MCC and some changes to make them more user-friendly.
@@ -30,51 +34,80 @@ Pictured: Location of the mod tools in the steam library.
 7. (Optional) Check out the [guides hub](~guides) to learn more about modding or install a launcher like [Osoyoos](~) if you don't like using the command line.
 
 # Changelog
-## What's new in the September update
+This changelog is focused on known notable modding-related changes and is not guaranteed to be complete.
 
-### Installing the September update
-1. Delete the shader templates from the previous update as they are not compatible, delete `tags\shaders\beam_templates`, `tags\shaders\black_templates`, `tags\shaders\contrail_templates`, `tags\shaders\custom_templates`, `tags\shaders\decal_templates`, `tags\shaders\foliage_templates`, `tags\shaders\halogram_templates`,`tags\shaders\light_volume_templates`, `tags\shaders\particle_templates`, `tags\shaders\screen_templates`, `tags\shaders\shader_templates`, `tags\shaders\terrain_templates` and `tags\shaders\water_templates`.
-2a. (recommended) Extract the new `H3ODSTEK.7z`.
-2b. (alternative) If you don't want to update all your tags it's highly recommended you at least update the `tags\shaders` folder.
+## July 2023
+* Add support for FSBs with custom names in MCC.
+* Fixed being unable to manipulate trigger volumes in Sapien.
+* Camera point transitions now interpolate correctly over 60 FPS.
+* Sounds imported into a new FSB bank no longer have corrupted playback in Sapien/Standalone.
+* Fixed instance geometry often failing to show correct dynamic cubemaps.
+* Fixed preference.dat error seen when converting an FBX to JMS while another ODST mod tool is open.
+* Fixed Sapien crashing when switching BSP/zone set.
+* Added [play builds](~build-types#optimization-options) of Sapien, Standalone, and Guerilla.
+* Added forked MP biped for odst_recon and odst_oni_op.
+* ODST MP game variants are now in the PC build's game_variants and show expected settings.
+* Removed various unused or deprecated tag fields.
+* Removed Guerilla's Tag Mover dependency on tag depot.
+* Picking up a gravity hammer while `skull_third_person` is active no longer crahses Standalone.
+* Added a flag so that infection forms can kill other characters without infecting them.
+* Ported `sound_impulse_time` from H3 to ODST.
+* Fixed Guerilla tag blocks extending out of their borders.
+* Allowed [chocolate_mountain_new](~) tags to be assigned per BSP rather than globally in the scenario.
+* MP maps have rebaked lightmaps.
+* `scenario_validate_game_progression` has some fixes to better handle `game_progression` modding setups.
+* In modded maps, `game_level_advance` goes to the next mission now instead of the main menu.
+* Models with large import info can now be imported (fixes `tag_data_resize() failed`).
+* Explanation fields no longer take up space in Guerilla's grid view.
+* Fixed `effect_scenery` lights appearing in the wrong location of the skybox for non-hosts.
+* Fixed shader views under expert mode in Guerilla.
 
-### Content
+## December 2022
+* Added Tool command `extract-unicode-strings`.
+* AI objectives crash fix
+* Unused fields removed from [scenario](~) and [globals](~) tags
+* `bin/ManagedBlam.dll` added
+* The Sapien/Standalone debug menu is properly scaled for the window size.
 
+## September 2022
+{% alert %}
+A caveat to this update is that you will need to delete the following shader templates in `tags\shaders\` from the previous update, as they are not compatible: `beam_templates`, `black_templates`, `contrail_templates`, `custom_templates`, `decal_templates`, `foliage_templates`, `halogram_templates`,`light_volume_templates`, `particle_templates`, `screen_templates`, `shader_templates`, `terrain_templates` and `water_templates`.
+
+Otherwise, extract the new `H3ODSTEK.7z` as usual. If you don't want to update all your tags it's highly recommended you at least update the `tags\shaders` folder.
+{% /alert %}
+
+Content:
 * Various changes to tags and data files. Updating your tag set is highly recommended.
 * Added test, audio and lighting reference scenarios `levels\test\box`, `levels\reference\audio`, `levels\reference\lighting_reference`
 * Map info files have been added to the `H3ODSTEK.7z` which allows the main menu to load maps.
 
-### General
-
+General:
 * Maximum string storage for cache files increased.
 * New flag for equipment to prevent AI from dropping them on death.
 * Script doc has new formatting and will now contain globals.
 * Reports are now contained within the reports folder.
 * Giants will now synchronize in co-operative Firefight games.
 
-### Tool
-
+Tool:
 * New commands `extract_unicode_strings` and `print_tag_to_XML` added.
 * Various improvements to the `export-tag-to-xml` command output.
 * Export bitmap commands now have support for cubemaps.
 * The `build-cache-file` command now uses the flag use-fmod-data by default which should result in smaller cache files.
 
-### Guerilla
-
+Guerilla:
 * Reserved chud text stringids are now listed.
 
-### Sapien
-
+Sapien:
 * Additional FMOD banks no longer stops working after a map reset.
 
-### Standalone
-
+Standalone:
 * Additional FMOD banks no longer stops working after a map reset.
 * Firefight maps can now be successfully launched from the main menu.
 
-## May 2022 Patch
+## May 2022
 * Tags were updated to include the [balance changes](https://support.halowaypoint.com/hc/en-us/articles/5178835359380-Halo-The-Master-Chief-Collection-MCC-Update-April-2022) from the corresponding MCC update.
 
-# Major changes from H2
+# Comparison with H2
 Naturally there is multitude of changes compared to H2 as the engine underwent a major revision, this document endeavours to list the major ones.
 
 * Tools now are all 64-bit, no more out of memory errors unless you actually run out of memory.

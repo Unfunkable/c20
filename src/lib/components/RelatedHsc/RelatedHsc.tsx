@@ -22,8 +22,9 @@ const localizations = {
 export type RelatedHscProps = {
   game: string;
   id?: string;
-  tagFilter: string;
+  tagFilter?: string;
   only?: OnlyType;
+  noClear?: boolean;
 };
 
 function buildDataTableProps(ctx: RenderContext, props: RelatedHscProps): DataTableProps {
@@ -52,10 +53,10 @@ function buildDataTableProps(ctx: RenderContext, props: RelatedHscProps): DataTa
     id: props.id ?? "functions-globals",
     linkCol: true,
     linkSlugKey: "slug",
-    noClear: true,
+    noClear: props.noClear ?? true,
     rowSortKey: "slug",
-    rowFilterKey: "tags",
-    rowFilterValue: props.tagFilter,
+    rowFilterKey: props.tagFilter ? "tags" : undefined,
+    rowFilterExpr: props.tagFilter,
     columns,
   };
 }
